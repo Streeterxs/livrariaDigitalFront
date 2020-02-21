@@ -1,25 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import Layout from './Components/Layout/Layout';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      Este é uma aplicação para criação de um banco de dados para livros!
+    </Layout>
   );
 }
 
