@@ -1,12 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
-import Layout from './Components/Layout/Layout';
+import {Layout as Layout} from './Components';
+import Routes from './Routes';
 import './App.scss';
+
+import { Router } from 'react-router-dom';
 
 function App() {
   return (
     <Layout>
-      Este é uma aplicação para criação de um banco de dados para livros!
+      <Routes></Routes>
     </Layout>
   );
 }
