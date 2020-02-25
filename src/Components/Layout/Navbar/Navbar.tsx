@@ -19,7 +19,7 @@ const navbar = () => (
                 </li>
             </ul>
             <span className="navbar-text">
-            Navbar text with an inline element
+                Procure seus livros ou cadastre novos livros no nosso banco.
             </span>
         </div>
     </nav>

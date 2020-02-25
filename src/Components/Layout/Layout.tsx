@@ -8,8 +8,7 @@ import Aux from '../../Hoc/Aux';
 const layout = (props: any) => (
     <Aux>
         <Navbar></Navbar>
-        <div>
-            <h3>Livraria Digital!</h3>
+        <div className="container-fluid py-4 containerBackgroundColor">
             <div>
                 {props.children}
             </div>

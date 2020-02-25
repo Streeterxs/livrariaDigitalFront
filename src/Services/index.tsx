@@ -1,1 +1,1 @@
-export {default as Livros} from './ApiLivros';
+export {default as Books} from './ApiBooks';

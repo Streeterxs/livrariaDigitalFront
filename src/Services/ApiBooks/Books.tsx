@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const apiLivros = axios.create({
+const apiBooks = axios.create({
     baseURL: "http://localhost:3500"
 })
 
-export default apiLivros;
+export default apiBooks;

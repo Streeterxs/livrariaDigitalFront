@@ -9,7 +9,9 @@ import { Router } from 'react-router-dom';
 function App() {
   return (
     <Layout>
-      <Routes></Routes>
+      <div>
+        <Routes></Routes>
+      </div>
     </Layout>
   );
 }
