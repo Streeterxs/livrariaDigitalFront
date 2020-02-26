@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { AxiosResponse } from 'axios';
 
 import Books from './Books';
-import { IBook } from './IBook';
+import { IBook } from '../IBook';
 import {Books as apiBooks} from '../../../Services';
 import { ResponseApi } from '../../../Services/ApiBooks/responseApi';
 

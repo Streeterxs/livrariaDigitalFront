@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Books as Books} from '../../../Services'
 import BookForm from './BookForm';
-import { IBook } from '../List/IBook';
+import { IBook } from '../IBook';
 
 const bookCreation = () => {
 

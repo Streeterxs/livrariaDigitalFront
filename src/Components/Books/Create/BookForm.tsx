@@ -1,42 +1,43 @@
 import React, { useState, FormEvent, ChangeEvent } from 'react';
 
+import Select from 'react-select';
+
+import {Utils as funcTransform} from '../../../Services/Utils'
+import { Categorias } from '../Categorias';
+
 import './BookForm.scss';
 
-interface BookForm {
-    nome: string;
-    autor: string;
-    editora: string;
-    idioma: string;
-    paginas: number;
-
-}
-
+const options = funcTransform(Categorias, 'label', 'value');
 const BookForm = (props: any) => {
+    console.log(options);
     const [book, setBook] = useState({
         nome: '',
         autor: '',
         editora: '',
         idioma: '',
-        paginas: ''
+        paginas: '',
+        categorias: ['']
     });
 
     const handleInputChange = (event: FormEvent<HTMLInputElement>) => {
-
         const target = event.currentTarget;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-
-        console.log(book);
         setBook({
             ...book,
             [name]: value,
         } as any);
-        console.log(book);
+    }
+
+    const handleMultiselectChange = (selectedOption: any) => {
+        setBook({
+            ...book,
+            categorias: selectedOption.map((opt: any) => opt.value)
+        })
     }
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
-        console.log(event);
         props.formSubmit(book);
     }
 
@@ -68,6 +69,17 @@ const BookForm = (props: any) => {
                     <div className="form-group col-12 col-md-3">
                         <label htmlFor="paginasLivro"><b>Páginas</b></label>
                         <input type="number" name="paginas" onChange={handleInputChange} className="form-control" id="paginasLivro" placeholder="480" required/>
+                    </div>
+
+                    <div className="col-12 col-md-3">
+                        <label htmlFor="multiselectCategorias"><b>Categorias</b></label>
+                        <Select
+                            className="w-100 multiselectStyles"
+                            id="multiselectCategorias"
+                            isMulti={true}
+                            onChange={handleMultiselectChange}
+                            options={options}
+                        />
                     </div>
 
                     <button type="submit" className="btn btn-secondary w-100 my-4">Submit</button>

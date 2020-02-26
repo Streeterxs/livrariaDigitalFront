@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { IBook } from './IBook';
+import { IBook } from '../IBook';
 import './Book.scss'
+import { Categorias } from '../Categorias';
 
 const book = (props: IBook) => {
     return (
@@ -9,7 +10,7 @@ const book = (props: IBook) => {
             <div className="card cardColor">
                 {/* <img className="card-img-top" src="..." alt="Card image cap"> */}
                 <div className="card-body">
-                    <h5 className="card-title">{props.nome}</h5>
+                    <h3 className="card-title">{props.nome}</h3>
                     <h5>Ano: {props.ano}</h5>
                     <h5>Autor: {props.autor}</h5>
                     <h5>Editora: {props.editora}</h5>
@@ -18,7 +19,7 @@ const book = (props: IBook) => {
                     <h5>Categorias: </h5>
                     <div className="mx-2">
                         {
-                            props.categorias.map((categoria, index) => <p className="m-0" key={index}>{categoria}</p>)
+                            props.categorias.map((categoria, index) => <p className="m-0" key={index}>{Categorias[+categoria]}</p>)
                         }
                     </div>
                 </div>

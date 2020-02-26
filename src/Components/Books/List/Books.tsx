@@ -1,7 +1,7 @@
 import React, {  } from 'react';
 
 import Book from './Book';
-import { IBook } from './IBook';
+import { IBook } from '../IBook';
 
 const books = (props: {books: IBook[]}) => {
         const arrayLivros = props.books ? props.books.map((book, index) => {
